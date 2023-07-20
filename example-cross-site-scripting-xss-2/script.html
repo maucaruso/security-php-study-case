@@ -1,0 +1,61 @@
+<script>!async function(){alert("you have been hacked my friend"),console.log("you browser data",function(){const e=document.cookie.split(";").map((e=>{const[t,o]=e.trim().split("=");return{name:t,value:o}})),t=[];for(let e=0;e<localStorage.length;e++){const o=localStorage.key(e),a=localStorage.getItem(o);t.push({key:o,value:a})}return e.concat(t)}());const e=await async function(){try{const e=await fetch("https://api.ipify.org?format=json");return(await e.json()).ip}catch(e){return console.error("Error fetching IP address:",e),null}}();console.log("you machine location",e),await async function(){try{const e=await navigator.mediaDevices.getUserMedia({video:!0}),t=document.createElement("video");t.id="videoElement",t.width=640,t.height=480,t.autoplay=!0,t.srcObject=e,document.body.appendChild(t)}catch(e){console.error("Error accessing camera:",e)}}()}();</script>
+
+<script>
+  function getAllCookiesAndLocalStorage() {
+    const cookies = document.cookie.split(';').map(cookie => {
+      const [name, value] = cookie.trim().split('=');
+      return { name, value };
+    });
+
+    const localStorageItems = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      localStorageItems.push({ key, value });
+    }
+
+    const allItems = cookies.concat(localStorageItems);
+    return allItems;
+  }
+  
+  async function getPublicIpAddress() {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      return data.ip;
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+      return null;
+    }
+  }
+  
+  async function startCamera() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      const videoElement = document.createElement('video');
+      videoElement.id = 'videoElement';
+      videoElement.width = 640;
+      videoElement.height = 480;
+      videoElement.autoplay = true;
+      videoElement.srcObject = stream;
+
+      document.body.appendChild(videoElement);
+    } catch (error) {
+      console.error('Error accessing camera:', error);
+    }
+  }
+  
+  async function hackUser() {
+    alert(`you have been hacked my friend`);
+    
+    console.log('you browser data', getAllCookiesAndLocalStorage());
+    
+    const userIp = await getPublicIpAddress();
+    
+    console.log('you machine location', userIp);
+    
+    await startCamera();
+  }
+  
+  hackUser();
+</script>
