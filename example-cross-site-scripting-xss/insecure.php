@@ -7,9 +7,11 @@
 
 <?php
 
-if(isset($_POST['busca'])) {
+if(isset($_POST['busca']) || isset($_GET['search'])) {
 
-  echo $_POST['busca'];
+  $search = $_POST['busca'] ?? $_GET['search'];
+  
+  echo "<p>Você buscou por: </p> <b>" . $search . "</b>";
 
 }
 

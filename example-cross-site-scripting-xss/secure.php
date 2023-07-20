@@ -7,11 +7,20 @@
 
 <?php
 
-if(isset($_POST['busca'])) {
+if(isset($_POST['busca']) || isset($_GET['search'])) {
+  
+  $search = $_POST['busca'] ?? $_GET['search'];
 
-  echo strip_tags($_POST['busca']); // removendo todo html e deixando apenas a string
-	echo strip_tags($_POST['busca'], "<strong><a>"); // removendo todos os elementos que não sejam strong ou a do campo
-  echo htmlentities($_POST['busca']); // convertendo html em string
+  echo "<p>Você buscou por: </p> <b>";
+  
+  echo strip_tags($search); // removendo todo html e deixando apenas a string
+  echo "<br/><br/>";
+	echo strip_tags($search, "<strong><a>"); // removendo todos os elementos que não sejam strong ou a do campo
+  echo "<br/><br/>";
+  echo htmlentities($search); // convertendo html em string
+  echo "<br/><br/>";
+  
+  echo "</b>";
 
 }
 
