@@ -1,4 +1,4 @@
-<!-- GET: http://local.com/example-file-upload/insecure.php -->
+<!-- GET: http://local.com/example-malicious-file-upload/insecure.php -->
 
 <?php
   if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["imagemAvatar"])) {    
