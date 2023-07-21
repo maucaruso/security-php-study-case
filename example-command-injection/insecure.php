@@ -1,3 +1,5 @@
+<!-- GET: http://localhost:8080/example-command-injection/insecure.php -->
+
 <?php
 
 $cmd = $_POST["cmd"] ?? null;

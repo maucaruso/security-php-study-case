@@ -1,4 +1,4 @@
-<!-- GET: http://localhost:3000/2 -->
+<!-- GET: http://localhost:8080/example-sql-injection/insecure.php?id=2 -->
 
 <?php
 
