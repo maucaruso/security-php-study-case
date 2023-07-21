@@ -6,7 +6,7 @@
     
     $fileExtension = end($file);
     $fileName = uniqid() . '.' . $fileExtension;
-    $filePath = './uploads/';
+    $filePath = '../uploads/';
     
     $savePath  = $filePath . $fileName;
     
