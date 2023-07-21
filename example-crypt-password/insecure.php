@@ -1,4 +1,4 @@
-<!-- GET: http://localhost:8080/example-crypt-password/insecure.php?id=2 -->
+<!-- GET: http://local.com/example-crypt-password/insecure.php?id=2 -->
 
 <?php
   if(isset($_POST['password']) && isset($_GET["id"])) {

@@ -1,4 +1,4 @@
-<!-- GET: http://localhost:8080/example-command-injection/secure.php -->
+<!-- GET: http://local.com/example-command-injection/secure.php -->
 
 <?php
 

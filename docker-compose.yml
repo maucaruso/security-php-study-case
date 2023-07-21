@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

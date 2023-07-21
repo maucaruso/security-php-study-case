@@ -1,4 +1,4 @@
-<!-- GET: http://localhost:8080/example-cross-site-scripting-xss-2/secure.php?id=2 -->
+<!-- GET: http://local.com/example-cross-site-scripting-xss-2/secure.php?id=2 -->
 
 <?php
   if(isset($_POST['user_name']) && isset($_POST['email']) && isset($_GET["id"])) {

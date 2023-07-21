@@ -1,4 +1,4 @@
-<!-- GET: http://localhost:8080/example-crypt-password/secure.php?id=2 -->
+<!-- GET: http://local.com/example-crypt-password/secure.php?id=2 -->
 
 <?php
   define('SECRET_IV', pack('a16', 'secretsalt'));
